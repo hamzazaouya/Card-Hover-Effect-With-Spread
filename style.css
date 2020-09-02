@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box {
+    position: relative;
+    width: 300px;
+    text-align: center;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, .2);
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.box::before {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 50%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, .2);
+    z-index: 2;
+}
+
+.icon {
+    position: relative;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: #FFF;
+    text-align: center;
+    line-height: 70px;
+    margin: auto;
+    transition: .8s;
+    background-color: red;
+}
+
+.icon::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: green;
+    left:0;
+    top: 0;
+    border-radius: 50%;
+    transition: 1s;
+    z-index: -1;
+}
+
+.box:first-of-type .icon,
+.box:first-of-type .icon::before{
+    background-color: #e61e63;
+}
+
+.box:first-of-type:hover .icon {
+    background-color: #e61e63;
+}
+
+.box:nth-of-type(2) .icon,
+.box:nth-of-type(2) .icon::before{
+    background-color: #21e629;
+}
+
+.box:nth-of-type(2):hover .icon {
+    background-color: #21e629;
+}
+
+.box:last-of-type .icon,
+.box:last-of-type .icon::before{
+    background-color: #2195f3;
+}
+
+.box:last-of-type:hover .icon {
+    background-color: #2195f3;
+}
+
+.box:hover .icon::before {
+    transform: scale(10)
+}
+
+
+.content {
+    position: relative;
+    margin-top: 1rem;
+    transition: .5s;
+}
+
+.box:hover .content {
+    color: #FFF;
+}
+
+.content h3 {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.content p {
+    font-size: .9rem;
+    margin-bottom: 1rem;
+}
+
+.content a {
+    display: block;
+    max-width: 45%;
+    padding: .5rem 0;
+    margin: auto;
+    text-decoration: none;
+    color: #000;
+    background-color: #FFF;
+    border-radius: 3rem;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, .2)
+}
